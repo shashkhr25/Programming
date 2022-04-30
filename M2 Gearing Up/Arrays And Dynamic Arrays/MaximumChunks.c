@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<stdbool.h>
+#include<limits.h>
 
-//Marked for revision
-bool canBeChunked ( int i, int j, int array[]);
+//bool canBeChunked ( int i, int j, int array[]);
 int main(){
 	int sizeOfArray,i;
 	printf("Enter the size of array : ");
@@ -15,6 +15,25 @@ int main(){
 	}
 	
 	i=0;
+	
+	
+	int max = INT_MIN, chunkCount=0;
+	for(i=0;i<sizeOfArray;i++){
+		
+		printf("array[i] : %d,   max : %d \n", array[i], max);
+		if(array[i] > max){
+			max = array[i];
+		}
+		printf("max : %d \n", max);
+		
+		if(max == i){
+			chunkCount++;
+		}
+	}
+	
+	
+	printf("Chunk count is : %d", chunkCount);
+	/*
 	int j,answer =0;
 	while(i<sizeOfArray){
 		for(j=i;i<sizeOfArray;j++){
@@ -43,5 +62,5 @@ bool canBeChunked ( int i, int j, int array[]){
 	}
 	else{
 		return true;
-	}
+	} */
 }

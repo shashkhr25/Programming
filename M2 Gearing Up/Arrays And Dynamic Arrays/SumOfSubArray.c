@@ -57,7 +57,12 @@ int main(){
 		printf("Enter the ending index of subarray : ");
 		scanf("%d", &m);
 		
-		int sum = array[m]- array[l-1];
+		if(l==0){
+			int sum = array[m];			
+		}
+		else{
+			int sum = array[m]- array[l-1];
+		}
 		printf("The sum of subarray for query %d is : %d", i, sum);
 		
 	}
